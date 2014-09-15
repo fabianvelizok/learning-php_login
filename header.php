@@ -1,3 +1,6 @@
+<?php
+	error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +34,25 @@
 
 
 			<header>
-				<div class="container">Header</div>
+				<div class="container">
+					
+					<a href="/" class="logo">Logo</a>	
+
+					<?php 
+
+						if($_SESSION['userLogued']==true){ ?>
+							
+							<div class="settings" id="js-settings">
+								<i class="icon-config"></i>
+								<ul>
+									<li><a href="javascript:void(0)"><?= $_SESSION['userName']; ?></a></li>
+									<li><a href="config_account.php">Config Account</a></li>
+									<li><a href="logout.php">Logout</a></li>
+								</ul>
+							</div>
+						
+						<?php }	?>
+				</div>
 			</header>
 
 			<!--.mainContent-->

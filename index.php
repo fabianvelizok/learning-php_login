@@ -3,7 +3,7 @@
 	session_name('fabian');
 	session_start();
 
-	if(!empty($_SESSION)){
+	if(!empty($_SESSION) && $_SESSION['userLogued']==true){
 		
 		include('header.php');
 
@@ -14,7 +14,7 @@
 			
 			<div class="container">
 				
-				<h1>Home</h1>
+				<h1>Welcome <?php echo $_SESSION['userName']; ?></h1>
 
 			</div>
 

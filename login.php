@@ -11,7 +11,7 @@
 	
 	<div class="boxLogin">
 
-		<h1>Login de usuario</h1>
+		<h1>Login User</h1>
 		
 		<form class="loginForm" action="/" method="POST" id="js-loginForm">
 			<div class="row">

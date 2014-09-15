@@ -35,12 +35,10 @@ function validate(){
 						if($('.row.error').is(':visible')) 
 							$('.row.error').hide();
 						
-						alert(data.content);
+						location.href = 'index.php';
 
 					}else{
 
-						alert(data.message);
-						console.log('response false');
 						$('.row.error').show();
 					}
 
@@ -68,6 +66,10 @@ function validate(){
 function onReady(){
 
 	validate();
+
+	$('.settings i').on('click', function(){
+		$('.settings ul').slideToggle();
+	});
 
 }
 

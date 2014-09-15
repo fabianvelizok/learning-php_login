@@ -1,17 +1,22 @@
 <?php
+	
+	session_name('fabian');
+	session_start();
 
+	define('site',1);
+	
 	$appResponse = array(
 
 		'response' 	=> false,
 		'message' 	=> 'Error en la App',
-		'content' 	=> 'asdasd'
+		'content' 	=> ''
 
 	);
 
 
 	if(isset($_POST) && !empty($_POST) && isset($_POST['action'])){
 
-		include('functions.php');
+		include_once('functions.php');
 
 		if($errorDb == false){
 
@@ -19,13 +24,8 @@
 
 				case 'login':
 
-					$appResponse = array(
-
-						'response' 	=> true,
-						'message' 	=> 'AJAX LOCO!!',
-						'content' 	=> '<div><h1>ajax</h1><div>'
-
-					);
+					$appResponse['response'] = userLogin($_POST, $mysqli);
+					$appResponse['message'] = '';
 
 				break;
 				
